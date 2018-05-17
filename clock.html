@@ -12,16 +12,21 @@
 </head>
 
 <body translate="no" >
-  <div id="output"></div>
+  <div id="output">
+    <span id="date"></span>
+    <span id="time"></span>
+  </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
   <script>
 
-    var output = document.getElementById("output");
+    var date = document.getElementById("date");
+    var time = document.getElementById("output");
     var c;
     setInterval(
     c = function() {
-      output.innerText = moment().format("DD/MM/YYYY HH:mm:ss");
+      date.innerText = moment().format("DD/MM/YYYY");
+      time.innterText = moment().format("HH:mm:ss");
     }, 1000);
     c();
 
